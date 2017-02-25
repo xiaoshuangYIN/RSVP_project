@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'RSVP_project.login',
+    'RSVP_project.events',
 ]
 
 MIDDLEWARE = [
@@ -128,5 +130,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# urls
+LOGIN_REDIRECT_URL = '/userhome/'
 
 
