@@ -1,21 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}user_home{% endblock %}
+{% block title %}Answer Questions{% endblock %}
+
 
 {% block content %}
-<body>
-  <h2>You have been successfully logged in</h2>
-</body>
-
-<body>
+  <h2>Events that you are invited to attend</h2>
   <a href="/createEvent/">create a event</a>
-</body>
-
-<body>
   <a href="/manageEventsIcreated/">manage the events you created</a>
-</body>
-
-<body>
   <a href="/ansQs/">answer questions for the events you plan to attend</a>
-</body>
 {% endblock %}

@@ -21,6 +21,7 @@
       <div>
 	<hr>
 	<a href="{% url 'login' %}">login</a> 
+	<hr>
       </div>
 
     </main>

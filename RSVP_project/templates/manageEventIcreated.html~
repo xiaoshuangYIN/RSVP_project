@@ -2,20 +2,10 @@
 
 {% block title %}user_home{% endblock %}
 
+
 {% block content %}
-<body>
   <h2>You have been successfully logged in</h2>
-</body>
-
-<body>
   <a href="/createEvent/">create a event</a>
-</body>
-
-<body>
   <a href="/manageEventsIcreated/">manage the events you created</a>
-</body>
-
-<body>
-  <a href="/ansQs/">answer questions for the events you plan to attend</a>
-</body>
+  <a href="/answerQuestions/">answer questions for the events you plan to attend</a>
 {% endblock %}
