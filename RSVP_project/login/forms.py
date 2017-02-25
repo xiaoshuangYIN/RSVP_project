@@ -9,7 +9,11 @@ class UserForm(forms.ModelForm):
         model = User_Model
         fields = ('username', 'email', 'password')
 '''
-
+'''
+class UserLoginForm(forms.Form):
+    User_name = forms.CharField(label = 'User name', max_length=100)
+    Password = forms.CharField(label = 'Password', max_length=100)
+'''
 class UserForm(forms.Form):
     User_name = forms.CharField(label = 'User name', max_length=100)
     Email = forms.CharField(label = 'Email', max_length=100)

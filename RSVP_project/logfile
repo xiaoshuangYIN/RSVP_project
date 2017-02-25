@@ -39,3 +39,15 @@ LOG:  database system was shut down at 2017-02-25 07:15:38 EST
 LOG:  MultiXact member wraparound protections are now enabled
 LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
+ERROR:  duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=(4) already exists.
+STATEMENT:  INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES ('pbkdf2_sha256$30000$0uw8ye7WAdLd$eRxfdd0r0Sv+JP/7/fZAfwELKK8EUi1yOHisHoPqenw=', NULL, false, '4', '', '', '4@duke.edu', false, true, '2017-02-25T14:20:39.901157+00:00'::timestamptz) RETURNING "auth_user"."id"
+ERROR:  duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=(4) already exists.
+STATEMENT:  INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES ('pbkdf2_sha256$30000$y5yGQK2Il7Wt$awXUWQtLACxHOyuB36a9MEuM52V5zaDBSteXpS7eolU=', NULL, false, '4', '', '', '4@duke.edu', false, true, '2017-02-25T17:11:10.663588+00:00'::timestamptz) RETURNING "auth_user"."id"
+ERROR:  duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=(5) already exists.
+STATEMENT:  INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES ('pbkdf2_sha256$30000$4Wh3muddKTfN$YS+zwQBDufuqf/xXFrhf/2Rs/hTmtvav7PUvU3w9kN8=', NULL, false, '5', '', '', '5@duke.edu', false, true, '2017-02-25T18:00:46.064279+00:00'::timestamptz) RETURNING "auth_user"."id"
+ERROR:  duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=(2) already exists.
+STATEMENT:  INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES ('pbkdf2_sha256$30000$oMwz3cBMX9CZ$3iL29p4JLdWSsS2a/L0iAacuQul888Sej+s/jMS6qtY=', NULL, false, '2', '', '', '2@duke.edu', false, true, '2017-02-25T18:10:57.073061+00:00'::timestamptz) RETURNING "auth_user"."id"

@@ -1,12 +1,33 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <title>{% block title %}Rock Your Event{% endblock %}</title>
+  </head>
+  
+  <body>
+    <header>
+      <h1>Rock Your Event</h1>
+    </header>
+    
+    <main>
+      
+      
 
-{% block title %}Login{% endblock %}
+      <div>
+	<h2>Login</h2>
+	<form id="form" method="post" action="/login/">
+	  {% csrf_token %}
+	  {{ form.as_p }}
+	  <button type="submit">Login</button>
+	</form>
+	
+      </div>
 
-{% block content %}
-  <h2>Login</h2>
-  <form method="post" action="/login/">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-  </form>
-{% endblock %}
+
+    </main>
+  </body>
+</html>
+
+
+
