@@ -2,12 +2,11 @@
 <html>
 
     {% block title %}See you!{% endblock %}
-    <hr>
+    
     {% block content %}
+    <h2>Logged out</h2>
     <p>You have been successfully logged out.</p>
-    <hr>
     <p><a href="{% url 'login' %}">Log in</a> again.</p>
-    <hr>
     {% endblock %}
 
 </html>

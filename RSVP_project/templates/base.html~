@@ -12,7 +12,7 @@
       <a href="{% url 'logout' %}">logout</a>
     {% else %}
       <a href="{% url 'login' %}">login</abactinally>
-
+      <a href="{% url 'register' %}">sign in</abactinally>
     {% endif %}
   </header>
   <hr>

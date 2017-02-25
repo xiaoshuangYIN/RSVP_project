@@ -5,7 +5,7 @@ from login.forms import UserForm
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from .forms import UserForm
-from django.contrib.auth.models import User
+
 def register(request):
     form_class = UserForm
 
@@ -23,9 +23,7 @@ def register(request):
             password = user_form.cleaned_data['Password']
             email = user_form.cleaned_data['Email']
             # create a user and save to database
-            user = User.objects.create_user(username, email, password)
-            user.set_password(password)
-            user.save()
+            user = 
             # return User object if credentials are correct
             user = authenticate(username=username, password=password)
             if user is not None:
