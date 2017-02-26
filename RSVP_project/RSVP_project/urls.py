@@ -33,4 +33,5 @@ urlpatterns = [
     url(r'^createEvent/$', events_views.create_event, name='createEvent'),
     url(r'^eventIndex/$',events_views.index, name='eventIndex'),
     url(r'^ansQs/$',events_views.answer_questions, name='ansQs'),
+    url(r'^event/(?P<event_id>[0-9]+)/$', events_views.detail, name='detail'),    
 ]

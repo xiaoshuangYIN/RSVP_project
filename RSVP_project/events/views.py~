@@ -59,14 +59,14 @@ def create_event(request):
 
     
 def index(request):
-    event_list = Event.objects#.all()
+    event_list = Event.objects.all()# a list of objs
     
     # begin test print-------------------
     f = open('log_file', 'w')
     if event_list is not None:
-        f.write('get event_list')
+        f.write('get event_list' + '\n')
         for event in event_list:
-            f.write(event.event_name)
+            f.write(event.event_name + '\n')
     else:
         f.write('did not get event_list')
     f.close()    
@@ -75,6 +75,13 @@ def index(request):
     context = {'event_list': event_list}
     return render(request, 'event_index.html', context)
 
-def answer_questions(request):
+def detail(request):
+    template_name = 'event_detail.html'
+    context = {'event_id': event_id}
+    return render(request, template_name, context)
+
+
+def answer_questions(request, event_id):
     template_name = 'ansQs.html'
     return render(request, template_name)
+

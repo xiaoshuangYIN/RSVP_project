@@ -75,6 +75,12 @@ def index(request):
     context = {'event_list': event_list}
     return render(request, 'event_index.html', context)
 
+def detail(request, event_id):
+    template_name = 'event_detail.html'
+    context = {'event_id': event_id}
+    return render(request, template_name, context)
+
 def answer_questions(request):
     template_name = 'ansQs.html'
     return render(request, template_name)
+

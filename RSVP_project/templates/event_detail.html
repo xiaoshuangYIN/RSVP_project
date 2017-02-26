@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}event detail{% endblock %}
+
+{% block content %}
+
+<body>
+  <hr>
+  <h2>Event:</h2>
+  {% if event_id %}
+  {{event_id}}
+  {% else %}
+    <p>No event is available.</p>
+{% endif %}
+</body>
+
+{% endblock %}
