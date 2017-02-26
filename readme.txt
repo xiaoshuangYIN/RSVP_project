@@ -18,3 +18,5 @@
     Every templates used by all the apps are saved at :
     RSVP_project/templates
     (not in each app's directory as tutorial)
+    
+ ** Don't forget to include the app in the installed_app list in setting.py
