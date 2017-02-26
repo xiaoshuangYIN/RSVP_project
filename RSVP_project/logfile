@@ -51,3 +51,11 @@ STATEMENT:  INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "
 ERROR:  duplicate key value violates unique constraint "auth_user_username_key"
 DETAIL:  Key (username)=(2) already exists.
 STATEMENT:  INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES ('pbkdf2_sha256$30000$oMwz3cBMX9CZ$3iL29p4JLdWSsS2a/L0iAacuQul888Sej+s/jMS6qtY=', NULL, false, '2', '', '', '2@duke.edu', false, true, '2017-02-25T18:10:57.073061+00:00'::timestamptz) RETURNING "auth_user"."id"
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2017-02-26 02:10:04 EST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
