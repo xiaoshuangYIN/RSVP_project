@@ -1,4 +1,7 @@
 1. After created a object of model, save it at the right place.
    by right place, I mean save it after the obj is returned.
 
-2. be very careful of the spelling.
+2. Be very careful of the spelling.
+
+3. Select one object of a model use : book.objects.get(name='red hood')
+   Select a list of objects of a model use : Entry.objects.all().filter(pub_date__year=2006)

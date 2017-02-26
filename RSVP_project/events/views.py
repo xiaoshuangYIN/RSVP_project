@@ -77,7 +77,16 @@ def index(request):
 
 def detail(request, event_id):
     template_name = 'event_detail.html'
-    context = {'event_id': event_id}
+    # get the event details
+    event_name = Event.objects.get(id=event_id).event_name
+    event_place = Event.objects.get(id=event_id).place
+    start_time = Event.objects.get(id=event_id).start_time
+    end_time = Event.objects.get(id=event_id).end_time
+    context = {'event_id': event_id,
+               'event_name' : event_name,
+               'event_place' : event_place,
+               'start_time' : start_time,
+               'end_time' : end_time}
     return render(request, template_name, context)
 
 def answer_questions(request):

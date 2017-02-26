@@ -6,9 +6,11 @@
 
 <body>
   <hr>
-  <h2>Event:</h2>
-  {% if event_id %}
-  {{event_id}}
+  {% if event_name %}
+  <h2>{{event_name}}</h2>
+  <p>Location: {{event_place}}</p>
+  <p>Start time: {{start_time}}</p>
+  <p>End time: {{end_time}}</p>
   {% else %}
     <p>No event is available.</p>
 {% endif %}

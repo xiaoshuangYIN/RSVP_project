@@ -1,2 +1,4 @@
 1. After created a object of model, save it at the right place.
    by right place, I mean save it after the obj is returned.
+
+2. be very careful of the spelling.
