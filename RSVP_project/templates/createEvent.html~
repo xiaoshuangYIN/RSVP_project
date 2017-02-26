@@ -7,9 +7,9 @@
 <h2>Create a event</h2>
 <body>
   <h1>Register to become a user</h1>
-  <form id="user_form" method="post" action="/register/">
+  <form id="event_form" method="post" action="/createEvent/">
     {% csrf_token %}
-    {{ user_form.as_p}}
+    {{ event_form.as_p}}
     <button type="submit">Submit</button>
   </form>
   

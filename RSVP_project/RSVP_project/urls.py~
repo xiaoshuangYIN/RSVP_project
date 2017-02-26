@@ -25,8 +25,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # auth
     url(r'^logout/$', auth_views.logout, {'template_name': 'logged_out.html'}, name='logout'),
+    url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),   
     # app: login
-    url(r'^login/$', login_views.login, name='login'),
     url(r'^register/$', login_views.register, name='register'), 
     url(r'^userhome/$', login_views.user_home, name='userhome'),
     # app: events

@@ -29,9 +29,8 @@ urlpatterns = [
     # app: login
     url(r'^register/$', login_views.register, name='register'), 
     url(r'^userhome/$', login_views.user_home, name='userhome'),
-
     # app: events
     url(r'^createEvent/$', events_views.create_event, name='createEvent'),
-    url(r'^manageEventsIcreated/$',events_views.manage_events, name='manageEventsIcreated'),
+    url(r'^eventIndex/$',events_views.index, name='eventIndex'),
     url(r'^ansQs/$',events_views.answer_questions, name='ansQs'),
 ]

@@ -7,8 +7,7 @@ from django.contrib.auth.models import User, Group, Permission
 from django.contrib.contenttypes.models import ContentType
 from .forms import EventForm
 from .models import Event
-
-
+   
 # Create your views here.
 def create_event(request):
     f = open('log_file', 'w')
@@ -53,14 +52,28 @@ def create_event(request):
             # add this user to the owner group of this event
             request.user.groups.add(owner_group)
             f.close()
-            return redirect('manageEventsIcreated')
+            return redirect('eventIndex')
 
         else:
             return redirect('userhome')
+
     
-def manage_events(request):
-    template_name = 'manageEventIcreated.html'
-    return render(request, template_name)
+def index(request):
+    event_list = Event.objects.all()# a list of objs
+    
+    # begin test print-------------------
+    f = open('log_file', 'w')
+    if event_list is not None:
+        f.write('get event_list' + '\n')
+        for event in event_list:
+            f.write(event.event_name + '\n')
+    else:
+        f.write('did not get event_list')
+    f.close()    
+    # end test print--------------------
+    
+    context = {'event_list': event_list}
+    return render(request, 'event_index.html', context)
 
 def answer_questions(request):
     template_name = 'ansQs.html'
