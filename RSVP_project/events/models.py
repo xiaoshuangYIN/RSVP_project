@@ -21,7 +21,6 @@ class Event(models.Model):
         return self.event_name
 
 
-
 class Question(models.Model):
     # belongs to event
     event = models.ForeignKey(Event, on_delete=models.CASCADE)

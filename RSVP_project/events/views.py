@@ -39,19 +39,21 @@ def create_event(request):
             # create 3 groups for this event
             owner_group = create_group(event_name + '_owner')
             owner_group.save()
+            # start test ---------------------------------------------
             f.write('creating group: ' + event_name + ' now.......')
             if owner_group is not None:
                 f.write('owner_group created')
             else:
                 f.write('owner_group not created')
-
+            f.close()
+            # end test ------------------------------------------------    
             guest_group = create_group(event_name + '_guest')
             guest_group.save()
             vendor_group = create_group(event_name + '_vendor')
             vendor_group.save()
             # add this user to the owner group of this event
             request.user.groups.add(owner_group)
-            f.close()
+
             return redirect('eventIndex')
 
         else:
@@ -82,14 +84,22 @@ def detail(request, event_id):
     event_place = Event.objects.get(id=event_id).place
     start_time = Event.objects.get(id=event_id).start_time
     end_time = Event.objects.get(id=event_id).end_time
+    link_to_add_question = 'event/' + event_id + '/createQ/'
     context = {'event_id': event_id,
                'event_name' : event_name,
                'event_place' : event_place,
                'start_time' : start_time,
-               'end_time' : end_time}
+               'end_time' : end_time,
+               'link_to_add_question' : link_to_add_question,}
+
     return render(request, template_name, context)
 
 def answer_questions(request):
     template_name = 'ansQs.html'
     return render(request, template_name)
 
+def createQ(request, event_id):
+     template_name = 'createQ.html'
+     event_name = Event.objects.get(id=event_id).event_name
+     context = {'event_name': event_name}
+     return render(request, template_name, context)
